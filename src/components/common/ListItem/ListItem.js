@@ -1,10 +1,16 @@
 import React from 'react';
-import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Button } from '../';
 
 export const ListItem = ({ children, onItemClick, onBtnClick, ...rest }) => {
-  const deleteBtnIcon = faTrashAlt;
-         return (
+
+  let btnRemoveProps = {
+    btnName: "Remove",
+    btnIcon: faTimes,
+    btnAction: () => onBtnClick(children)
+  };
+  
+  return (
            <>
              <li
                onClick={e => onItemClick(children, e)}
@@ -13,11 +19,7 @@ export const ListItem = ({ children, onItemClick, onBtnClick, ...rest }) => {
              >
                {children}
              </li>
-             <Button
-               name="Remove"
-               icon={deleteBtnIcon}
-               doAction={() => onBtnClick(children)}
-             />
+             <Button btnProps={btnRemoveProps} />
            </>
          );
        };

@@ -1,12 +1,13 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export const Button = ({ name, icon, doAction }) => {
+export const Button = ({ btnProps }) => {
 
+    const {btnName, btnIcon, btnAction} = btnProps;
     return (
-      <button onClick={doAction}>
-        {<FontAwesomeIcon icon={ icon } />}&nbsp;
-        {name}
+      <button onClick={ btnAction }>
+        {<FontAwesomeIcon icon={ btnIcon } />}&nbsp;
+        { btnName }
       </button>
     );
 }
