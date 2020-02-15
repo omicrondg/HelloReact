@@ -1,13 +1,22 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export const Button = ({ btnProps }) => {
+export const Button = ({ name="", icon, action }) => {
 
-    const {btnName, btnIcon, btnAction} = btnProps;
-    return (
-      <button onClick={ btnAction }>
-        {<FontAwesomeIcon icon={ btnIcon } />}&nbsp;
-        { btnName }
-      </button>
-    );
-}
+  return (
+    <button onClick={action}>
+      {icon ? <FontAwesomeIcon icon={icon} /> : ""}&nbsp;
+      {name}
+    </button>
+  );
+};
+
+Button.propTypes = {
+  btnProps: PropTypes.shape({
+    btnName: PropTypes.string,
+    btnIcon: PropTypes.object,
+    btnAction: PropTypes.func.isRequired
+  })
+};

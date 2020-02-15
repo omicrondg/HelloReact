@@ -10,11 +10,11 @@ export const List = ({ data, removeItem }) => {
   }
 
   const renderListItems = () => {
-    return data.map(element => (
+    return data.map(element => 
       <ListItem key={element} onItemClick={showAlert} onBtnClick={removeItem}>
         {element}
       </ListItem>
-    ));
+    );
   }
 
   return <ul>{renderListItems()}</ul>;

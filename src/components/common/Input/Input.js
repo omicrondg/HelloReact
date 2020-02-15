@@ -1,17 +1,15 @@
 import React from 'react';
 
-const Input = ({params}) => {
-    
-    const {id, type = "text", name = "", placeholder = "", lblText} = params;
-    
-    return (
-      <input
-        id={id}
-        type={type}
-        name={name}
-        placeholder={placeholder}
-    >{lblText}</input>
-    );
-}
+export const Input = ({ id, type = "text", name = "", value = "", placeholder = "" }) => {
+
+  return (
+    <input 
+    id={id}
+    type={type} 
+    name={name} 
+    value={value} 
+    placeholder={placeholder} 
+    />
+  );
+};
  
-export default Input;

@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Card } from "./components/containers/Card/Card";
+import { AddCardForm } from "./components/custom/AddCardForm/AddCardForm";
 
 const cardsData = [
   {
@@ -60,6 +61,15 @@ class App extends React.Component {
     });
   };
 
+  addCard = card => {
+    console.log("eeeee", card);
+    
+    // let _cards = this.state.data.filter(element => element.id !== card.cardId);
+    // this.setState({
+      // data: _cards
+    // });
+  };
+
   renderCards = () => {
     return this.state.data.map(element => (
       <Card
@@ -77,7 +87,12 @@ class App extends React.Component {
   // }
 
   render() {
-    return this.renderCards();
+    return (
+      <>
+        <AddCardForm action={this.addCard} />
+        {this.renderCards()}
+      </>
+    )
   }
 }
 

@@ -1,10 +1,11 @@
 import React from 'react';
 
-export const Fieldset = ({children}) => {
+export const Fieldset = ({children, legend}) => {
     
     return (
-        <fieldset>
-
-        </fieldset>
+      <fieldset>
+        <legend>{legend}</legend>
+        {children}
+      </fieldset>
     );
 }

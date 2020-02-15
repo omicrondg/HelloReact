@@ -1,16 +1,27 @@
 import React from "react";
 import { Input, Button } from "../";
 
-const InputWithLabelAndButton = ({ params }) => {
-    const {id, lblText, btnProps} = params;
+export const InputWithLabelAndButton = ({
+  id,
+  type = "text",
+  inputName = "",
+  placeholder = "",
+  lblText,
+  btnName = "",
+  btnIcon,
+  btnAction
+}) => {
 
-    return (
-      <>
-        <label htmlFor={id}>{lblText}</label>
-        <Input params={params} />
-        <Button btnProps={btnProps} />
-      </>
-    );
+  return (
+    <>
+      <label htmlFor={id}>{lblText}</label>
+      <Input id={id} type={type} name={inputName} placeholder={placeholder} />
+      <Button
+        name={btnName}
+        icon={btnIcon}
+        action={btnAction
+        }
+      />
+    </>
+  );
 };
-
-export default InputWithLabelAndButton;

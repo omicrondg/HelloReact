@@ -7,18 +7,16 @@ export const Card = ({cardData, removeCard, removeItem}) => {
 
   const {heading, description, listData, id} = cardData;
 
-  let btnDeleteProps = {
-    btnName: "Delete",
-    btnIcon: faTrashAlt,
-    btnAction: () => removeCard(id)
-  };
-  
   return (
     <div className={Style.Card}>
       <Heading>{heading}</Heading>
       <Paragraph>{description}</Paragraph>
       <List data={listData} removeItem={value => removeItem(id, listData.filter(v=> v !== value))}/>
-      <Button btnProps={btnDeleteProps}/>
+      <Button 
+        name="Delete Card"
+        icon={ faTrashAlt }
+        action={ () => removeCard(id) }
+      />
     </div>
   );
 };

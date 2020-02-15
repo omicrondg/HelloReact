@@ -4,3 +4,7 @@ export * from "./Button/Button";
 export * from "./Input/Input";
 export * from "./List/List";
 export * from "./ListItem/ListItem";
+export * from "./Select/Select";
+export * from "./Input/Input";
+export * from "./InputWithLabel/InputWithLabel";
+export * from "./InputWithLabelAndButton/InputWithLabelAndButton";
